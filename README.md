@@ -12,6 +12,9 @@ A sleek, mobile-friendly music player built using HTML, CSS, and JavaScript. Thi
 - 🎧 Visual song list with real-time interaction
 - 🔊 Volume control and playback progress bar
 
+## Demo 
+>https://app.netlify.com/projects/unrivaled-trifle-88eeb5/deploys/684bc67c3972687e1b554c23
+
 ## 🚀 Getting Started
 
 1. **Clone the repository**
