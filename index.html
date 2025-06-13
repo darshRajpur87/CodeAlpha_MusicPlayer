@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Modern Music Player</title>
+  <link rel="stylesheet" href="static/css/style.css" />
+</head>
+<body>
+  <aside class="sidebar">
+    <h2>🎵 MyPlayer</h2>
+    <nav>
+      <ul>
+        <li id="nav-queue" onclick="navigateTo('queue')">📃 Queue</li>
+        <li id="nav-songs" onclick="navigateTo('songs')">📁 Songs</li>
+        <li id="nav-upload" onclick="navigateTo('upload')">⏫ Upload</li>
+        <li id="nav-favorites" onclick="navigateTo('favorites')">⭐ Favorites</li>
+        <li id="nav-recent" onclick="navigateTo('recent')">⏱️ Recent</li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="player">
+    <h1 id="title">Track Title</h1>
+    <h3 id="artist">Artist</h3>
+    <audio id="audio"></audio>
+    
+    <div class="controls">
+      <button id="backBtn" onclick="prevSong()" title="Previous">&#x23EE;</button>
+      <button id="playBtn" onclick="togglePlay()" title="Play/Pause">&#x25B6;</button>
+      <button id="nextBtn" onclick="nextSong()" title="Next">&#x23ED;</button>
+    </div>
+
+    <div class="progress-container" onclick="setProgress(event)">
+      <div id="progress" class="progress"></div>
+    </div>
+    <div class="time">
+      <span id="current-time">0:00</span> / <span id="duration">0:00</span>
+    </div>
+
+    <label>Volume:
+      <input type="range" id="volume" min="0" max="1" step="0.01" value="1" />
+    </label>
+
+    <!-- Sections -->
+    <section id="queueSection" class="content-section">Queue is empty</section>
+
+    <section id="songsSection" class="content-section">
+      <div class="available-songs">
+        <h3>📁 Available Songs</h3>
+        <ul id="songList"></ul>
+      </div>
+    </section>
+
+    <section id="uploadSection" class="content-section">
+      <h3>⏫ Upload Songs</h3>
+      <input type="file" id="fileUpload" multiple accept="audio/*" />
+    </section>
+
+    <section id="favoritesSection" class="content-section">
+      <h3>⭐ Favorite Songs</h3>
+      <ul id="favoritesList"></ul>
+    </section>
+
+    <section id="recentSection" class="content-section">
+      <h3>⏱️ Recently Played</h3>
+      <ul id="recentList"></ul>
+    </section>
+  </main>
+
+  <script src="static/js/script.js"></script>
+</body>
+</html>
